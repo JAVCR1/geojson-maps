@@ -1,0 +1,26 @@
+name: Update GeoJSON
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # every day at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download GeoJSON
+        run: curl -o Public_map_annual_complete.geojson "https://geozonekortgeoserver.greenpowerdenmark.dk/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gpd:public_map_annual_complete&srsName=EPSG:4326&outputFormat=application/json"
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add Public_map_annual_complete.geojson
+          git commit -m "Update GeoJSON from GeoServer" || echo "No changes"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
