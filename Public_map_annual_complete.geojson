@@ -1,1 +1,6 @@
-{"type":"FeatureCollection","features":[],"totalFeatures":0,"numberMatched":0,"numberReturned":0,"timeStamp":"2025-12-16T01:13:04.492Z","crs":null}
+<?xml version="1.0" encoding="UTF-8"?><ows:ExceptionReport xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/ows/1.1 https://geozonekortgeoserver.geozoneappext.p.azurewebsites.net/geoserver/schemas/ows/1.1.0/owsAll.xsd">
+  <ows:Exception exceptionCode="NoApplicableCode">
+    <ows:ExceptionText>Could not parse CQL filter list.
+Lexical error at line 1, column 31.  Encountered: &amp;lt;EOF&amp;gt; Parsing : ownership=&amp;apos;Cerius-Radius A/S&amp;apos;%.</ows:ExceptionText>
+  </ows:Exception>
+</ows:ExceptionReport>
