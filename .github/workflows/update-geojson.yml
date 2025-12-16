@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download GeoJSON
-        run: curl -o Public_map_annual_complete.geojson "https://geozonekortgeoserver.geozoneappext.p.azurewebsites.net/geoserver/gpd/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=gpd:public_map_annual_complete&srsName=EPSG:4326&CQL_FILTER=ownership=%27Cerius-Radius%20A/S%27%&outputFormat=application%2Fjson"
+        run: curl -o Public_map_annual_complete.geojson "https://geozonekortgeoserver.geozoneappext.p.azurewebsites.net/geoserver/gpd/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gpd:public_map_annual_complete&outputFormat=application%2Fjson&CQL_FILTER=ownership=%27Cerius-Radius%20A%2FS%27"
 
       - name: Commit & Push
         run: |
